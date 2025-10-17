@@ -1,5 +1,7 @@
+document.getElementById("botonBuscar").addEventListener("click", buscarPokemon);
+
 async function buscarPokemon() {
-  const nombre = document.getElementById("nombrePokemon").value.toLowerCase();
+  const nombre = document.getElementById("nombrePokemon").value.toLowerCase().trim();
   const resultado = document.getElementById("resultado");
 
   if (!nombre) {
@@ -22,6 +24,7 @@ async function buscarPokemon() {
       <p><strong>Tipo:</strong> ${datos.types.map(t => t.type.name).join(", ")}</p>
     `;
   } catch (error) {
-    resultado.innerHTML = "<p>No se encontró ese Pokémon 😢</p>";
+    resultado.innerHTML = "<p>No se encontró ese Pokémon</p>";
+    console.error(error);
   }
 }
