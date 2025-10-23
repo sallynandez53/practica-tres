@@ -1,17 +1,40 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>API de Perros</title>
-  <link rel="stylesheet" href="styles.css" />
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Galería API de Perritos</title>
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <div class="container">
-    <h1>🐾 Imágenes de Perritos</h1>
-    <img id="dogImage" src="" alt="Imagen de perro" />
-    <button id="fetchDog">Ver otro perrito</button>
-  </div>
+  <main>
+    <header>
+      <div>
+        <h1>API de Perritos — Galería</h1>
+        <div class="sub">Imágenes obtenidas desde <strong>Dog CEO</strong> (dog.ceo)</div>
+      </div>
+
+      <div class="controls">
+        <div class="toolbar">
+          <select id="breedSelect">
+            <option value="">Cargando razas...</option>
+          </select>
+          <input id="count" type="number" min="1" max="30" value="8" title="Cantidad de imágenes" />
+          <button id="loadBtn">Cargar</button>
+        </div>
+        <button id="randomBtn" title="Perrito aleatorio">Aleatorio</button>
+      </div>
+    </header>
+
+    <section id="gallerySection">
+      <div id="status" class="status"></div>
+      <div id="grid" class="grid"></div>
+      <div id="spinner" class="spinner"><div class="loader"></div></div>
+    </section>
+
+    <footer>Haz clic en una imagen para abrirla en nueva pestaña.</footer>
+  </main>
+
   <script src="script.js"></script>
 </body>
 </html>
